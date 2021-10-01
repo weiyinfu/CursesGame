@@ -173,7 +173,7 @@ class Teris(Game):
                 self.over = True
         else:
             self.tick += 1
-            if self.tick % 4 != 0:
+            if self.tick % 8 != 0:
                 return
             if not move(obj, 1, 0, self.map):
                 # 如果没能移动成功，小块由活跃转向不活跃
@@ -220,7 +220,7 @@ class Teris(Game):
         self.rows = rows
         self.cols = cols
         self.over = False
-        self.tick = 1  # 始终tick，每隔多少个时钟走一格
+        self.tick = 0  # 始终tick，每隔多少个时钟走一格
         self.map = np.zeros((self.rows, self.cols - 2), dtype=np.int)
 
 
